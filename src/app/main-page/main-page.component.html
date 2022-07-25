@@ -1,0 +1,26 @@
+<div class="main-container">  
+    <h1>The Quiz Page</h1>
+    <div class="nav-bar">
+        <mat-form-field appearance="fill">
+            <mat-label>Which category do you choose?</mat-label>
+            <mat-select [(value)]="selection">
+                <mat-option value="none">All Categories</mat-option>
+                <mat-option value="arts-lit">Arts & Literature</mat-option>
+                <mat-option value="film-tv">Film & TV</mat-option>
+                <mat-option value="food-drink">Food & Drink</mat-option>
+                <mat-option value="general">General Knowledge</mat-option>
+                <mat-option value="geography">Geography</mat-option>
+                <mat-option value="history">History</mat-option>
+                <mat-option value="music">Music</mat-option>
+                <mat-option value="science">Science</mat-option>
+                <mat-option value="society">Society & Culture</mat-option>
+                <mat-option value="sports">Sport & Leisure</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-button color="primary" (click)="buildQuestions(selection)">More Question!</button>
+    </div>
+    <div *ngFor="let q of questions">
+        <app-quiz-card [question]="q"></app-quiz-card>
+    </div>
+    <!-- <button (click)="seeData()">See Data</button> -->
+</div>  

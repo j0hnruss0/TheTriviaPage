@@ -1,0 +1,9 @@
+<mat-card [@makeChoice]="stateMaker()">
+    <mat-card-title>{{ question.question }}</mat-card-title>
+    <div *ngFor="let answer of question.possibleAnswers; let i = index;">
+        <p 
+          (click)="chooseThis(answer)"
+          [ngStyle]="isClicked && answer === question.answer? { 'color': 'white' }: ''"
+        >{{ i + 1 }}. {{ answer }}</p>
+    </div>
+</mat-card>
